@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import Stepper from 'bs-stepper';
 
 @Component({
@@ -7,22 +7,22 @@ import Stepper from 'bs-stepper';
   styleUrls: ['./res-form.component.css']
 })
 export class ResFormComponent implements OnInit {
-  private stepper!: Stepper;
-  currentStep!: number;
+  name = 'Stepper';
+  private stepper: Stepper;
 
-  constructor(private elementRef: ElementRef) { }
-//https://stackblitz.com/edit/bs-stepper-angular-lazyload?file=src%2Fapp%2Fapp.component.ts
+  next(): void {
+    this.stepper.next();
+  }
+
+  onSubmit(): boolean {
+    return false;
+  }
+
   ngOnInit(): void {
-    const stepperEl = this.elementRef.nativeElement.querySelector('#stepper1');
-
-    stepperEl.addEventListener('show.bs-stepper', (event: { detail: { to: number; }; }) => {
-      this.currentStep = event.detail.to;
-    });
-
-    this.stepper = new Stepper(stepperEl, {
+    this.stepper = new Stepper(document.querySelector('#stepper1'), {
       linear: false,
       animation: true
-    });
+    })
   }
 
 }

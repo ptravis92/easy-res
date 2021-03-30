@@ -1,0 +1,118 @@
+<div [formGroup]="form">
+    <legend> Basic Information</legend>
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column col-8">
+            <div class="d-flex flex-row justify-content-between">
+                <div class="d-flex flex-column form-group">
+                    <label for="firstName">Name:</label>
+                </div>
+                <div class="d-flex flex-column col-10 pr-0">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="form-group">
+                            <input formControlName="firstName"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="First"
+                                   [ngClass]="{
+                        'is-invalid': validate(
+                            form.controls.firstName
+                        )
+                      }" />
+                            <span class="text-danger"
+                                  *ngIf="
+                        validate(form.controls.firstName)
+                      ">Required</span>
+                        </div>
+                        <div class="form-group col-4">
+                            <input formControlName="middleName"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Middle" />
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="lastName"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Last"
+                                   [ngClass]="{
+                        'is-invalid': validate(
+                            form.controls.lastName
+                        )
+                      }" />
+                            <span class="text-danger"
+                                  *ngIf="validate(form.controls.lastName)">Required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column col-8">
+            <div class="d-flex flex-row form-group form-inline justify-content-between">
+                <label for="emailAddress">Email Address:</label>
+                <div class="d-flex flex-column col-10 pr-0">
+                    <input formControlName="emailAddress"
+                           type="text"
+                           class="form-control"
+                           placeholder="you@example.com"
+                           [ngClass]="{
+                    'is-invalid': validate(
+                        form.controls.emailAddress
+                    )
+                  }" />
+                    <span class="text-danger"
+                          *ngIf="validate(form.controls.emailAddress)">Required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row">
+        <div class="d-flex flex-column col-8">
+            <div class="d-flex flex-row justify-content-end">
+                <div class="col-10 form-group">
+                    <input formControlName="phone"
+                           type="tel"
+                           mask="(000) 000-0000"
+                           class="form-control col-4"
+                           placeholder="Phone Number"
+                           [ngClass]="{
+                    'is-invalid': validate(
+                        form.controls.phone
+                    )
+                  }" />
+                    <span class="text-danger"
+                          *ngIf="validate(form.controls.phone)">Required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+        <div class="d-flex flex-column col-8">
+            <div class="d-flex flex-row justify-content-between form-group form-inline mb-0">
+                <label for="description">Summary:</label>
+                <textarea formControlName="description"
+                          class="form-control col-8"
+                          [ngClass]="{
+              'is-invalid': validate(
+                form.controls.summary
+              )
+            }"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-lg-end justify-content-md-end justify-content-sm-start">
+        <span class="text-danger d-flex flex-column col-9"
+              *ngIf="validate(form.controls.description)">Please complete a summary between 50
+            and 255 characters</span>
+    </div>
+    <div class="d-flex flex-row justify-content-lg-end justify-content-md-end justify-content-sm-start mb-3">
+        <div class="d-flex flex-column col-9">
+            <span class="text-muted">
+                min/max of 50/255 characters |
+                {{ form.value.summary.length }}
+                character<span *ngIf="form.value.description.length !== 1">s</span>
+            </span>
+        </div>
+    </div>
+</div>

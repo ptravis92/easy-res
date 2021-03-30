@@ -90,8 +90,8 @@
     <div class="d-flex flex-row justify-content-between">
         <div class="d-flex flex-column col-8">
             <div class="d-flex flex-row justify-content-between form-group form-inline mb-0">
-                <label for="description">Summary:</label>
-                <textarea formControlName="description"
+                <label for="summary">Summary:</label>
+                <textarea formControlName="summary"
                           class="form-control col-8"
                           [ngClass]="{
               'is-invalid': validate(
@@ -103,7 +103,7 @@
     </div>
     <div class="d-flex flex-row justify-content-lg-end justify-content-md-end justify-content-sm-start">
         <span class="text-danger d-flex flex-column col-9"
-              *ngIf="validate(form.controls.description)">Please complete a summary between 50
+              *ngIf="validate(form.controls.summary)">Please complete a summary between 50
             and 255 characters</span>
     </div>
     <div class="d-flex flex-row justify-content-lg-end justify-content-md-end justify-content-sm-start mb-3">
@@ -111,7 +111,7 @@
             <span class="text-muted">
                 min/max of 50/255 characters |
                 {{ form.value.summary.length }}
-                character<span *ngIf="form.value.description.length !== 1">s</span>
+                character<span *ngIf="form.value.summary.length !== 1">s</span>
             </span>
         </div>
     </div>

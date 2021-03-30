@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { faBriefcase, faFileAlt, faGraduationCap, faInfo, faTools } from '@fortawesome/free-solid-svg-icons';
 import Stepper from 'bs-stepper';
 
 @Component({
@@ -9,6 +10,12 @@ import Stepper from 'bs-stepper';
 export class ResFormComponent implements OnInit {
   name = 'Stepper';
   private stepper: Stepper;
+  education = faGraduationCap;
+  info = faInfo;
+  skills = faTools;
+  jobs = faBriefcase;
+  preview = faFileAlt;
+
 
   next(): void {
     this.stepper.next();
@@ -22,7 +29,7 @@ export class ResFormComponent implements OnInit {
     this.stepper = new Stepper(document.querySelector('#stepper1'), {
       linear: false,
       animation: true
-    })
+    });
   }
 
 }

@@ -1,57 +1,82 @@
 <div class="container">
   <!-- <hello name="{{ name }}"></hello> -->
-  <div id="stepper1" class="bs-stepper">
+  <div id="stepper1"
+       class="bs-stepper">
     <div class="bs-stepper-header">
-      <div class="step" data-target="#test-l-1">
+      <div class="step"
+           data-target="#test-l-1">
         <button class="step-trigger">
-          <span class="bs-stepper-circle">1</span>
-          <span class="bs-stepper-label">Basic Info</span>
+          <span class="bs-stepper-circle">
+            <fa-icon [icon]="info"></fa-icon>
+          </span>
+          <!-- <span class="bs-stepper-label">Basic Info</span> -->
         </button>
       </div>
       <div class="line"></div>
-      <div class="step" data-target="#test-l-2">
+      <div class="step"
+           data-target="#test-l-2">
         <button class="step-trigger">
-          <span class="bs-stepper-circle">2</span>
-          <span class="bs-stepper-label">Skills</span>
+          <span class="bs-stepper-circle">
+            <fa-icon [icon]="skills"></fa-icon>
+          </span>
+          <!-- <span class="bs-stepper-label">Skills</span> -->
         </button>
       </div>
       <div class="line"></div>
-      <div class="step" data-target="#test-l-3">
+      <div class="step"
+           data-target="#test-l-3">
         <button class="step-trigger">
-          <span class="bs-stepper-circle">3</span>
-          <span class="bs-stepper-label">Education</span>
+          <span class="bs-stepper-circle">
+            <fa-icon [icon]="education"></fa-icon>
+          </span>
+          <!-- <span class="bs-stepper-label">Education</span> -->
         </button>
       </div>
       <div class="line"></div>
-      <div class="step" data-target="#test-l-3">
+      <div class="step"
+           data-target="#test-l-3">
         <button class="step-trigger">
-          <span class="bs-stepper-circle">3</span>
-          <span class="bs-stepper-label">Jobs</span>
+          <span class="bs-stepper-circle">
+            <fa-icon [icon]="jobs"></fa-icon>
+          </span>
+          <!-- <span class="bs-stepper-label">Jobs</span> -->
         </button>
       </div>
       <div class="line"></div>
-      <div class="step" data-target="#test-l-3">
+      <div class="step"
+           data-target="#test-l-3">
         <button class="step-trigger">
-          <span class="bs-stepper-circle">3</span>
-          <span class="bs-stepper-label">Preview</span>
+          <span class="bs-stepper-circle">
+            <fa-icon [icon]="preview"></fa-icon>
+          </span>
+          <!-- <span class="bs-stepper-label">Preview</span> -->
         </button>
       </div>
     </div>
     <div class="bs-stepper-content">
       <form (ngSubmit)="onSubmit()">
-        <div id="test-l-1" class="content">
+        <div id="test-l-1"
+             class="content">
           <app-basic-info></app-basic-info>
-          <button (click)="next()" class="btn btn-primary">Next</button>
+          <button (click)="next()"
+                  class="btn btn-primary">Next</button>
         </div>
-        <div id="test-l-2" class="content">
+        <div id="test-l-2"
+             class="content">
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            <input type="password"
+                   class="form-control"
+                   id="exampleInputPassword1"
+                   placeholder="Password" />
           </div>
-          <button (click)="next()" class="btn btn-primary">Next</button>
+          <button (click)="next()"
+                  class="btn btn-primary">Next</button>
         </div>
-        <div id="test-l-3" class="content text-center">
-          <button type="submit" class="btn btn-primary mt-5">Submit</button>
+        <div id="test-l-3"
+             class="content text-center">
+          <button type="submit"
+                  class="btn btn-primary mt-5">Submit</button>
         </div>
       </form>
     </div>

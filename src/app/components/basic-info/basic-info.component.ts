@@ -26,3 +26,5 @@ export class BasicInfoComponent implements OnInit {
     return field.invalid && field.touched;
   }
 }
+
+

@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>bs-stepper angular lazy load</h1>
+    <div id="stepper1" class="bs-stepper mt-5">
+      <div class="bs-stepper-header">
+        <div class="step" data-target="#partone">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">1</span>
+            <span class="bs-stepper-label">Part One</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#parttwo">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">2</span>
+            <span class="bs-stepper-label">Part Two</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#partthree">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">3</span>
+            <span class="bs-stepper-label">Part Three</span>
+          </button>
+        </div>
+      </div>
+      <div class="bs-stepper-content">
+        <div id="partone" class="content" role="tabpanel">
+            Part One
+          <!-- <part-one *ngIf="currentStep === 0"></part-one> -->
+        </div>
+        <div id="parttwo" class="content" role="tabpanel">
+            Part two
+          <!-- <part-two *ngIf="currentStep === 1"></part-two> -->
+        </div>
+        <div id="partthree" class="content" role="tabpanel">
+            Part Three
+          <!-- <part-three *ngIf="currentStep === 2"></part-three> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  

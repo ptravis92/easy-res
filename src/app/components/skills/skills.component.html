@@ -1,0 +1,23 @@
+<div [formGroup]="form">
+    <legend> Skills</legend>
+    <div class="d-flex flex-row justify-content-center">
+        <div class="d-flex flex-column col-8">
+            <div class="d-flex flex-row form-group form-inline justify-content-between">
+                <label for="emailAddress">Email Address:</label>
+                <div class="d-flex flex-column col-10 pr-0">
+                    <input formControlName="emailAddress"
+                           type="text"
+                           class="form-control"
+                           placeholder="you@example.com"
+                           [ngClass]="{
+                    'is-invalid': validate(
+                        form.controls.emailAddress
+                    )
+                  }" />
+                    <span class="text-danger"
+                          *ngIf="validate(form.controls.emailAddress)">Required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

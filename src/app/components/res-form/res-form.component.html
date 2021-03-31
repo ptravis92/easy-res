@@ -1,10 +1,9 @@
 <div class="container">
-  <!-- <hello name="{{ name }}"></hello> -->
   <div id="stepper1"
        class="bs-stepper">
     <div class="bs-stepper-header">
       <div class="step"
-           data-target="#test-l-1">
+           data-target="#info">
         <button class="step-trigger">
           <span class="bs-stepper-circle">
             <fa-icon [icon]="info"></fa-icon>
@@ -14,7 +13,7 @@
       </div>
       <div class="line"></div>
       <div class="step"
-           data-target="#test-l-2">
+           data-target="#skills">
         <button class="step-trigger">
           <span class="bs-stepper-circle">
             <fa-icon [icon]="skills"></fa-icon>
@@ -24,7 +23,7 @@
       </div>
       <div class="line"></div>
       <div class="step"
-           data-target="#test-l-3">
+           data-target="#education">
         <button class="step-trigger">
           <span class="bs-stepper-circle">
             <fa-icon [icon]="education"></fa-icon>
@@ -34,7 +33,7 @@
       </div>
       <div class="line"></div>
       <div class="step"
-           data-target="#test-l-3">
+           data-target="#jobs">
         <button class="step-trigger">
           <span class="bs-stepper-circle">
             <fa-icon [icon]="jobs"></fa-icon>
@@ -44,7 +43,7 @@
       </div>
       <div class="line"></div>
       <div class="step"
-           data-target="#test-l-3">
+           data-target="#preview">
         <button class="step-trigger">
           <span class="bs-stepper-circle">
             <fa-icon [icon]="preview"></fa-icon>
@@ -55,25 +54,50 @@
     </div>
     <div class="bs-stepper-content">
       <form (ngSubmit)="onSubmit()">
-        <div id="test-l-1"
+        <div id="info"
              class="content">
           <app-basic-info></app-basic-info>
           <button (click)="next()"
-                  class="btn btn-primary">Next</button>
+                  class="btn btn-primary">
+            <fa-icon [icon]="forward"></fa-icon>
+          </button>
+
         </div>
-        <div id="test-l-2"
+        <div id="skills"
              class="content">
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password"
-                   class="form-control"
-                   id="exampleInputPassword1"
-                   placeholder="Password" />
-          </div>
+          <app-skills></app-skills>
+          <button (click)="previous()"
+                  class="btn btn-secondary">
+            <fa-icon [icon]="back"></fa-icon>
+          </button>
           <button (click)="next()"
-                  class="btn btn-primary">Next</button>
+                  class="btn btn-primary">
+            <fa-icon [icon]="forward"></fa-icon>
+          </button>
         </div>
-        <div id="test-l-3"
+        <div id="education"
+             class="content">
+          <button (click)="previous()"
+                  class="btn btn-secondary">
+            <fa-icon [icon]="back"></fa-icon>
+          </button>
+          <button (click)="next()"
+                  class="btn btn-primary">
+            <fa-icon [icon]="forward"></fa-icon>
+          </button>
+        </div>
+        <div id="jobs"
+             class="content">
+          <button (click)="previous()"
+                  class="btn btn-secondary">
+            <fa-icon [icon]="back"></fa-icon>
+          </button>
+          <button (click)="next()"
+                  class="btn btn-primary">
+            <fa-icon [icon]="forward"></fa-icon>
+          </button>
+        </div>
+        <div id="preview"
              class="content text-center">
           <button type="submit"
                   class="btn btn-primary mt-5">Submit</button>

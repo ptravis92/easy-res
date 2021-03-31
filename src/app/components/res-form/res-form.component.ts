@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { faBriefcase, faFileAlt, faGraduationCap, faInfo, faTools } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faBriefcase, faFileAlt, faGraduationCap, faInfo, faTools } from '@fortawesome/free-solid-svg-icons';
 import Stepper from 'bs-stepper';
 
 @Component({
@@ -8,17 +8,22 @@ import Stepper from 'bs-stepper';
   styleUrls: ['./res-form.component.css']
 })
 export class ResFormComponent implements OnInit {
-  name = 'Stepper';
   private stepper: Stepper;
   education = faGraduationCap;
   info = faInfo;
   skills = faTools;
   jobs = faBriefcase;
   preview = faFileAlt;
+  forward = faArrowRight;
+  back = faArrowLeft;
 
 
   next(): void {
     this.stepper.next();
+  }
+
+  previous(): void {
+    this.stepper.previous();
   }
 
   onSubmit(): boolean {

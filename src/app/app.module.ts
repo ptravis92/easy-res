@@ -8,12 +8,14 @@ import { BasicInfoComponent } from './components/basic-info/basic-info.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SkillsComponent } from './components/skills/skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResFormComponent,
-    BasicInfoComponent
+    BasicInfoComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

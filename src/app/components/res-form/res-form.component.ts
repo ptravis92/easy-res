@@ -8,7 +8,7 @@ import Stepper from 'bs-stepper';
   styleUrls: ['./res-form.component.css']
 })
 export class ResFormComponent implements OnInit {
-  private stepper: Stepper;
+private stepper: Stepper;
   education = faGraduationCap;
   info = faInfo;
   skills = faTools;
